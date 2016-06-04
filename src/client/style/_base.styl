@@ -1,0 +1,138 @@
+/**
+ * Base styles
+ */
+*, *:before, *:after
+  box-sizing border-box
+
+ks-normalize()
+
+html
+  base-font()
+  @media screen and (max-width: 825px)
+    base-font(-2)
+  @media screen and (max-width: 740px)
+    base-font(-3)
+  @media screen and (max-width: 530px)
+    base-font(-5)
+  @media screen and (max-width: 440px)
+    base-font(-5)
+  @media screen and (max-width: 320px)
+    base-font(-6)
+
+html,
+body,
+#content,
+#main
+  width 100%
+  height 100%
+  margin 0 auto
+  overflow hidden
+
+body
+  medium()
+  font-family $font-sans
+  color $primary-text-color
+  background-color white
+  padding 0.1px 0
+
+#main
+  position relative
+  overflow-y auto
+
+a,
+a:hover,
+a:visited,
+a:active
+  color $link-color
+  text-decoration none
+
+input,
+textarea,
+keygen,
+select,
+button
+  medium()
+  font-family $font-sans
+  color $primary-text-color
+  font-weight 700
+
+button
+  font-weight 300
+
+label
+  cursor pointer
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-weight 400
+
+h1
+  xx-large()
+  margin-bottom lines(1)
+  margin-top lines(2)
+  font-weight 300
+
+h2
+  x-large()
+  margin-bottom lines(1)
+  margin-top lines(2)
+
+h3
+  x-large()
+  margin-bottom lines(1)
+  margin-top lines(1)
+
+h4
+  large()
+  margin-bottom lines(1)
+  margin-top lines(1)
+
+h5
+  medium()
+  margin-bottom lines(1)
+  margin-top lines(1)
+
+h6
+  small()
+  margin-bottom lines(1)
+  margin-top lines(1)
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote
+  margin-bottom lines(1)
+  margin-top lines(1)
+
+/* Sanitation */
+hr
+  margin -1px auto
+  // border none
+  border-top 1px solid
+
+li > ol,
+li > ul
+  margin-bottom 0
+  margin-top 0
+
+b,
+strong,
+em,
+small,
+code
+  line-height 1
+
+sup,
+sub
+  top -0.4em
+  position relative
+  vertical-align baseline
+
+sub
+  top 0.4em

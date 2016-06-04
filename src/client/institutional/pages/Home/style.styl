@@ -1,0 +1,33 @@
+@import '~style/_import'
+
+
+:local(.main)
+  position relative
+  display block
+  height: 100%
+  background $primary-color
+
+
+:local(.wrapper)
+  wrapper($screen-phone)
+  align(both)
+  width 100%
+  text-align center
+  overflow auto
+
+
+:local(.header)
+  margin 0 0 lines(1)
+
+  h1
+    x-large()
+    margin 0
+    color $primary-color-text
+
+
+:local(.content)
+  box-shadow(2)
+  padding lines(1)
+  background white
+
+

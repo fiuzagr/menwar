@@ -1,0 +1,53 @@
+@import '~style/_import'
+
+:local(.main)
+  position relative
+  // fix
+  // margin on child element moves parent
+  overflow hidden
+
+  &.invalid
+    :local(.input)
+      margin-bottom 0
+      border-bottom-color $secondary-text-color
+
+      &:focus
+        border-bottom-color $primary-color
+
+      + :local(.label)
+        color $secondary-text-color
+
+  .err-msg
+    x-small()
+    display inline-block
+    margin-bottom lines(1)
+    color $secondary-text-color
+
+
+:local(.label)
+  small()
+  ks-absolute 0 0 lines(1)
+  display block
+  color $primary-color
+
+
+:local(.input)
+  medium()
+  display block
+  padding lines(.5) 2px
+  margin-top lines(1)
+  margin-bottom lines(2)
+  width ks-calc('100% - 4px', 96%)
+  outline none
+  border none
+  border-bottom 1px solid $primary-color
+  background-color transparent
+  font-weight 500
+  color $primary-text-color
+
+  &:focus
+    border-bottom-color $primary-color
+
+    + :local(.label)
+      color $primary-color
+

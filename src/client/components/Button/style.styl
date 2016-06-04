@@ -1,0 +1,61 @@
+@import '~style/_import'
+
+:local(.main)
+  link($primary-color-text, $accent-color)
+  medium()
+  box-shadow(2)
+  display inline-block
+  padding lines(.25) lines(.5)
+  margin lines(.25) 0
+  border 0
+  outline 0
+  border-radius 2px
+  font-weight 400
+  text-align center
+  cursor pointer
+  text-decoration none
+
+  &[disabled]
+    link($secondary-text-color, $divider-color)
+
+    &,
+    &:hover,
+    &:active,
+    &:visited
+      cursor default
+      pointer-events none
+
+  .fa
+    font-size inherit
+    line-height inherit
+    display inline-block
+    padding-left lines(.5)
+
+    &:first-child
+      padding-left 0
+      padding-right lines(.5)
+
+  &:active
+    box-shadow(0)
+    margin-top lines(.5)
+    margin-bottom 0
+
+
+:local(.large)
+  large()
+  padding lines(.5) lines(1)
+  margin lines(.5) 0
+
+  &:active
+    margin-top lines(.75)
+    margin-bottom lines(.25)
+
+
+:local(.facebook)
+  link($primary-color-text, $facebook-color)
+
+
+:local(.link)
+  link($accent-color, white)
+  box-shadow(0)
+

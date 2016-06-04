@@ -1,0 +1,10 @@
+{
+  "url": {
+    "base": "/app",
+    "socket": "/ws"
+  },
+  "site": {
+    "title": "Site title",
+    "description": "Site description"
+  }
+}

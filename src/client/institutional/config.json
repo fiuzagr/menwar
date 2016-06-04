@@ -1,0 +1,9 @@
+{
+  "url": {
+    "base": "/"
+  },
+  "site": {
+    "title": "Site title",
+    "description": "Site description"
+  }
+}

@@ -1,0 +1,28 @@
+extends ../layout.pug
+
+block style
+  if typeof style === 'string'
+    style.
+      !{style}
+  else if style.app
+    link(
+      href=style.app
+      rel='stylesheet'
+      type='text/css'
+    )
+
+block main
+  #content
+    != html
+
+block script
+  script(type='text/javascript').
+    window.__INITIAL_STATE__ = !{initialState};
+
+  if script.app
+    script(
+      src=script.app
+      type='text/javascript'
+    )
+
+

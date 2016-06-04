@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+require('es6-promise').polyfill();
+
+var path = require('path');
+var WebpackIsomorphicTools = require('webpack-isomorphic-tools');
+
+
+/**
+ * Load .env file
+ */
+require('dotenv').load({silent: true});
+
+
+/**
+ * Ensure env variables
+ */
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+process.env.DEBUG_ROOT = process.env.DEBUG_ROOT || 'Prod';
+process.env.ROOT_PATH = path.resolve(__dirname, '..');
+process.env.IS_DEV = process.env.NODE_ENV === 'development';
+
+
+var serverPath = process.env.IS_DEV ?
+  'src/server' : 'build/server';
+
+
+// debug
+var debug = require('debug')(process.env.DEBUG_ROOT + ':www');
+debug('Initializing...');
+
+
+// server
+global.webpackIsomorphicTools = new WebpackIsomorphicTools(
+    require(path.join(process.env.ROOT_PATH, 'webpack/isomorphic-tools'))
+  )
+  .development(process.env.IS_DEV)
+  .server(process.env.ROOT_PATH, function () {
+
+    /**
+     * Module dependencies.
+     */
+    var app = require(path.join(process.env.ROOT_PATH, serverPath));
+
+
+    /**
+     * Get port from environment and store in Express.
+     */
+    var port = process.env.PORT || '8080';
+    app.set('port', port);
+    var ip = process.env.IP || '127.0.0.1';
+    app.set('ip', ip);
+
+
+    /**
+     * Create server
+     */
+    require(path.join(process.env.ROOT_PATH, 'index.js'))
+      .default(app, ip, port);
+
+  });
+
