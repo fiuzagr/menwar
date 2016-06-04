@@ -51,7 +51,9 @@ $ npm run dev
 
 ## Thanks
 
-To (@erikras)[https://github.com/erikras] with (react-redux-universal-hot-example)[https://github.com/erikras/react-redux-universal-hot-example/] by many references.
+To [@erikras](https://github.com/erikras) with [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example/) by many references.
 
-To (@bradleyboy)[https://github.com/bradleyboy] with (yarsk)[https://github.com/bradleyboy/yarsk] by many references.
+To [@bradleyboy](https://github.com/bradleyboy) with [yarsk](https://github.com/bradleyboy/yarsk) by many references.
+
+And many others.
 
